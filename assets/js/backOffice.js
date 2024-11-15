@@ -59,4 +59,5 @@ const submitEvent = function (e) {
     });
 };
 
-document.querySelector("form").addEventListener("submit", submitEvent);
+document.getElementById("productForm").addEventListener("submit", submitEvent);
+

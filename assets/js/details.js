@@ -1,4 +1,5 @@
-const BASE_URL = "https://striveschool-api.herokuapp.com/api/product/";
+//dati API
+const endpointURL = "https://striveschool-api.herokuapp.com/api/product/";
 const psw =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzM3MTBjNjhhZDEyOTAwMTU4NzZiZDMiLCJpYXQiOjE3MzE2NjIwMjIsImV4cCI6MTczMjg3MTYyMn0.ZbB0Wd457IADXc8nC8857cCL5aZAoskStsL_-J1lhHw";
 
@@ -8,7 +9,7 @@ const id = queryParams.get("id");
 
 // Funzione per ottenere i dati del prodotto
 const getProductDetails = () => {
-  fetch(`${BASE_URL}${id}`, {
+  fetch(`${endpointURL}${id}`, {
     headers: { Authorization: psw },
   })
     .then((resp) => {
@@ -35,7 +36,7 @@ const updateProduct = () => {
     price: document.getElementById("priceForm").value,
   };
 
-  fetch(`${BASE_URL}${id}`, {
+  fetch(`${endpointURL}${id}`, {
     method: "PUT",
     body: JSON.stringify(updatedProduct),
     headers: {
@@ -70,7 +71,7 @@ const updateProduct = () => {
 // Funzione per eliminare il prodotto
 const deleteProduct = () => {
   if (confirm("Sei sicuro di voler eliminare questo prodotto?")) {
-    fetch(`${BASE_URL}${id}`, {
+    fetch(`${endpointURL}${id}`, {
       method: "DELETE",
       headers: { Authorization: psw },
     })
@@ -86,7 +87,7 @@ const deleteProduct = () => {
 
 // Assegna eventi ai pulsanti
 document.getElementById("modalLauncher").addEventListener("click", () => {
-  fetch(`${BASE_URL}${id}`, { headers: { Authorization: psw } })
+  fetch(`${endpointURL}${id}`, { headers: { Authorization: psw } })
     .then((resp) => resp.json())
     .then((product) => {
       document.getElementById("nameForm").value = product.name;
