@@ -1,3 +1,4 @@
+//dati API
 const endpointURL = "https://striveschool-api.herokuapp.com/api/product/";
 const psw =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzM3MTBjNjhhZDEyOTAwMTU4NzZiZDMiLCJpYXQiOjE3MzE2NzcxMzMsImV4cCI6MTczMjg4NjczM30.WxW7X3ETsZWE6mo-KrV8IK2zST5I9wMTPPLhnbT1DGs";
